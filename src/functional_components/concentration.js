@@ -6,8 +6,6 @@ const Concentration = () => {
       <p><h1>Concentration</h1></p>
       <hr></hr>
     </div>
-    
-    
   )
 }
 
