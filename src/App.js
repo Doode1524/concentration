@@ -1,7 +1,7 @@
 
 import './App.css';
 import Banner from './class_components/banner';
-import PlayingCard from './class_components/card';
+import PlayingCard from './class_components/playingCard';
 
 function App() {
   return (

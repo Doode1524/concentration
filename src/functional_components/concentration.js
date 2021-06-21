@@ -3,7 +3,7 @@ import React from 'react'
 const Concentration = () => {
   return(
     <div>
-      <p><h1>Welcome to Concentration</h1></p>
+      <h1>Welcome to Concentration</h1>
       <hr></hr>
     </div>
   )
