@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
-import img01 from '../public/Boar.jpeg'
-import img02 from '../public/Cat.jpeg'
-import img03 from '../public/Cow.jpeg'
-import img04 from '../public/Deer.jpeg'
-import img05 from '../public/Ducks.jpeg'
-import img06 from '../public/Goose.jpeg'
-import img07 from '../public/Horse.jpg'
-import img08 from '../public/Piglet.jpeg'
-import img09 from '../public/Puppy.jpg'
-import img10 from '../public/Rooster.png'
-import img11 from '../public/Moose.webp'
-import img12 from '../public/Wolf.jpg'
+import img01 from '../images/Boar.jpeg'
+import img02 from '../images/Cat.jpeg'
+import img03 from '../images/Cow.jpeg'
+import img04 from '../images/Deer.jpeg'
+import img05 from '../images/Ducks.jpeg'
+import img06 from '../images/Goose.jpeg'
+import img07 from '../images/Horse.jpg'
+import img08 from '../images/Piglet.jpeg'
+import img09 from '../images/Puppy.jpg'
+import img10 from '../images/Rooster.png'
+import img11 from '../images/Moose.webp'
+import img12 from '../images/Wolf.jpg'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 
@@ -32,7 +32,10 @@ const imgs = [
 class CardFront extends Component {
 
   renderImgs = () => {
-    imgs.map()
+    imgs.map((img,index) => {
+      img.index,
+      img.name
+    })
   }
 
   render() {

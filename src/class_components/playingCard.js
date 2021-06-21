@@ -14,9 +14,10 @@ class PlayingCard extends Component {
 
   render() {
     return(
-      <Card>
-        
-      </Card>
+      <div>
+        <CardFront />
+        <CardBack />
+      </div>
     )
   }
 }
