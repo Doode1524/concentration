@@ -10,83 +10,51 @@ import img09 from '../images/Puppy.jpg'
 import img10 from '../images/Rooster.png'
 import img11 from '../images/Moose.webp'
 import img12 from '../images/Wolf.jpg'
-import img from '../images/cardBack.jpg'
+
 import React, {Component} from 'react' 
-import CardFront from './cardFront';
-import CardBack from './cardBack';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
+import CardFront from '../functional_components/cardFront';
+import CardBack from '../functional_components/cardBack';
 
-
-const imgs = {
-  'Boar': img01,
-  'Cat': img02,
-  'Cow': img03,
-  'Deer': img04,
-  'Ducks': img05,
-  'Goose': img06,
-  'Horse': img07,
-  'Piglet': img08,
-  'Puppy': img09,
-  'Rooster': img10,
-  'Moose': img11,
-  'Wolf': img12
-}
+const imgs = [
+  {index: '01', name:'Boar', image: img01},
+  {index: '02', name:'Cat', image: img02},
+  {index: '03', name:'Cow', image: img03},
+  {index: '04', name:'Deer', image: img04},
+  {index: '05', name:'Ducks', image: img05},
+  {index: '06', name:'Goose', image: img06},
+  {index: '07', name:'Horse', image: img07},
+  {index: '08', name:'Piglet', image: img08},
+  {index: '09', name:'Puppy', image: img09},
+  {index: '10', name:'Rooster', image: img10},
+  {index: '11', name:'Moose', image: img11},
+  {index: '12', name:'Wolf', image: img12},
+  {index: '13', name:'Boar', image: img01},
+  {index: '14', name:'Cat', image: img02},
+  {index: '15', name:'Cow', image: img03},
+  {index: '16', name:'Deer', image: img04},
+  {index: '17', name:'Ducks', image: img05},
+  {index: '18', name:'Goose', image: img06},
+  {index: '19', name:'Horse', image: img07},
+  {index: '20', name:'Piglet', image: img08},
+  {index: '21', name:'Puppy', image: img09},
+  {index: '22', name:'Rooster', image: img10},
+  {index: '23', name:'Moose', image: img11},
+  {index: '24', name:'Wolf', image: img12}
+]
 
 class PlayingCard extends Component {
 
-  renderImgs = () => {
-    return imgs.map((img) => (
-      img
-    ),console.log(img))
-  }
-
   render() {
-  
     return(
-      <Card className='cardFront' >
-        <CardActionArea>
-          <CardFront 
-          
-          />
-        </CardActionArea>
-      </Card>
+      <div className='playingCard'>
+        <CardFront 
+          image={this.props.image}
+        />
+        <CardBack 
+          bgImg={this.props.bgImg}
+        />
+      </div>
     )
   }
 }
-
 export default PlayingCard;
-
-
-
-// export default class MovieCard extends Component {
-
-//   render() {
-//     return (
-//       <div className="movie-card">
-//         {/* which component should receive which props? */}
-//         <CardFront 
-//           poster={posterMap[this.props.poster]}
-//         />
-//         <CardBack 
-//           title={this.props.title}
-//           IMDBRating={this.props.IMDBRating}
-//           genres={this.props.genres}
-//         />
-//       </div>
-//     )
-//   }
-// }
-
-// // Don't forget your default props!
-// MovieCard.defaultProps = {
-//   title: 'Unknown',
-//   IMDBRating: null,
-//   genres: ["No Genre(s) Found"],
-//   poster: 'default'
-// }
