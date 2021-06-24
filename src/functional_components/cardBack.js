@@ -1,5 +1,7 @@
-import React from 'react'
 
+
+import React from 'react'
+import bgImg from '../images/cardBack.jpg'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { useTheme } from '@material-ui/core/styles';
@@ -9,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 
 
  
-const CardFront = (props) => {
+const CardBack = (props) => {
   const theme = useTheme();
   
 
@@ -22,7 +24,7 @@ const CardFront = (props) => {
               <CardActionArea>
                 <img
                   style={{ height: "" ? "300px" : "50px"}}
-                  src='https://i.pinimg.com/736x/d6/0c/7e/d60c7e8983fdbd7c7a27fd42fb3d61ba.jpg'
+                  src='https://lh3.googleusercontent.com/proxy/qkWwpXrG59BBy54iaABgCkBaUBlq5C6qUxNftCfArSdXl4SSLKKYi4UiEpZTM8mRJfrX8n0Z8JYOSaYyeaj8vX1g2DrR4Qw'
                 />
               </CardActionArea>
             </Card>
@@ -32,7 +34,7 @@ const CardFront = (props) => {
               <CardActionArea>
                 <img
                   style={{ height: "" ? "300px" : "50px"}}
-                  src='https://static.india.com/wp-content/uploads/2015/11/089-414x246.jpg'
+                  src='https://lh3.googleusercontent.com/proxy/qkWwpXrG59BBy54iaABgCkBaUBlq5C6qUxNftCfArSdXl4SSLKKYi4UiEpZTM8mRJfrX8n0Z8JYOSaYyeaj8vX1g2DrR4Qw'
                 />
               </CardActionArea>
             </Card>
@@ -46,5 +48,7 @@ const CardFront = (props) => {
 }
 
 
-export default CardFront;
+export default CardBack;
+
+
 
