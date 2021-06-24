@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import bgImg from '../images/cardBack.jpg'
+import bgImg from '../images/cardBack.png'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { useTheme } from '@material-ui/core/styles';
@@ -23,8 +23,8 @@ const CardBack = (props) => {
             <Card>
               <CardActionArea>
                 <img
-                  style={{ height: "" ? "300px" : "50px"}}
-                  src='https://lh3.googleusercontent.com/proxy/qkWwpXrG59BBy54iaABgCkBaUBlq5C6qUxNftCfArSdXl4SSLKKYi4UiEpZTM8mRJfrX8n0Z8JYOSaYyeaj8vX1g2DrR4Qw'
+                  style={{ height: "150px", padding: '20px' }}
+                  src='bgImg'
                 />
               </CardActionArea>
             </Card>
@@ -33,8 +33,8 @@ const CardBack = (props) => {
             <Card>
               <CardActionArea>
                 <img
-                  style={{ height: "" ? "300px" : "50px"}}
-                  src='https://lh3.googleusercontent.com/proxy/qkWwpXrG59BBy54iaABgCkBaUBlq5C6qUxNftCfArSdXl4SSLKKYi4UiEpZTM8mRJfrX8n0Z8JYOSaYyeaj8vX1g2DrR4Qw'
+                  style={{ height: "150px", padding: '20px' }}
+                  src=''
                 />
               </CardActionArea>
             </Card>

@@ -16,6 +16,7 @@ class PlayingCard extends Component {
       <div className='playingCard'>
         
         <CardFront
+        
         />
         <CardBack 
           
