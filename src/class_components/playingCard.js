@@ -13,7 +13,7 @@ import img12 from '../images/Wolf.jpg'
 
 import React, {Component} from 'react' 
 import CardFront from '../functional_components/cardFront';
-import CardBack from '../functional_components/cardBack';
+import CardBack from '../class_components/cardBack';
 
 const imgs = [
   {index: '01', name:'Boar', image: img01},
@@ -44,12 +44,25 @@ const imgs = [
 
 class PlayingCard extends Component {
 
+  state = {
+    flipped: 0
+  }
+
+  renderImgs = () => {
+    return imgs.map(img => {
+      return <CardFront
+                        key={img.index}
+                        name={img.name}
+                        image={img.image}
+              />
+    })
+  }
+
   render() {
     return(
       <div className='playingCard'>
-        <CardFront 
-          image={this.props.image}
-        />
+        {this.renderImgs()}
+        
         <CardBack 
           bgImg={this.props.bgImg}
         />

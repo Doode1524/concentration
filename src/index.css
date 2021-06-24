@@ -33,7 +33,7 @@ body, html, #root {
   background: lightskyblue;
 }
 
-.playingCard {
+/* .playingCard {
   width: 200px;
   height: 200px;
   margin: 5px;
@@ -49,7 +49,7 @@ body, html, #root {
   transform: rotateY(180deg) scale(1.05);
 }
 
-.cardFront, .cardBback {
+.cardFront, .cardBack {
   position: absolute;
   height: inherit;
   width: inherit;
@@ -78,9 +78,9 @@ body, html, #root {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
+} */
 
-span {
+/* span {
   border: none;
   width: 80%;
   height: 0px;
@@ -92,5 +92,5 @@ span {
   
   width: 148px;
   height: 33px;
-}
+} */
 
