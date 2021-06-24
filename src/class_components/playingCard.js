@@ -18,9 +18,9 @@ class PlayingCard extends Component {
         <CardFront
         
         />
-        <CardBack 
+        {/* <CardBack 
           
-        />
+        /> */}
       </div>
     )
   }
