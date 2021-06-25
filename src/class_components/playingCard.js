@@ -15,7 +15,7 @@ class PlayingCard extends Component {
     return(
       <div className='playingCard'>
         
-        <CardFront
+        <CardFront className='cardFront'
         
         />
         {/* <CardBack 
