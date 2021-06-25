@@ -51,15 +51,15 @@ const CardFront = (props) => {
   ]
  
 
-  function shuffle(imgs) {
-    for (let i = imgs.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = imgs[i];
-        imgs[i] = imgs2[j];
-        imgs2[j] = temp;
-        return imgs2[j]
-    }
-  }
+  // function shuffle(imgs) {
+  //   for (let i = imgs.length - 1; i > 0; i--) {
+  //       let j = Math.floor(Math.random() * (i + 1));
+  //       let temp = imgs2[i];
+  //       imgs2[i] = imgs2[j];
+  //       imgs2[j] = temp;
+  //       return imgs2[j]
+  //   }
+  // }
 
 
   
@@ -69,7 +69,7 @@ const CardFront = (props) => {
     <div>
       <Grid container>
         <Grid item container direct='row' justify='space-evenly'>
-          {imgs2.map((img, index) => (
+          {imgs.map((img, index) => (
             <Grid item key={index}>
               <Card >
                 <CardActionArea>
