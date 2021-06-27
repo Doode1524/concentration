@@ -3,14 +3,15 @@ import React, { Component } from 'react'
 class NewGame extends Component {
 
   state = {
-    intitals: "",
+    initials: "",
     numPics: "8"
   }
 
   handleChange = (e) => {
+   
     this.setState({
-      intitals: {value: e.target.value},
-      numPics: {value: e.target.value}
+      [e.target.name]: e.target.value
+      
     })
 
   }
@@ -26,13 +27,13 @@ class NewGame extends Component {
         <label>Initials</label>
         <input 
           type='text'
-          name='Initials'
+          name='initials'
           placeholder='TTT'
-          value={this.state.intitals.value} 
+          value={this.state.initials} 
           onChange={this.handleChange}
         ></input><br></br>
         <label>Number of Pictures (*2 for total cards)</label>
-        <select value={this.state.numPics.value} onChange={this.handleChange}>       
+        <select name='numPics' value={this.state.numPics} onChange={this.handleChange}>       
           <option value="8">4</option>
           <option value="10">5</option>
           <option value="12">6</option>

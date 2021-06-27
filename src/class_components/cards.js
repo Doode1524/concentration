@@ -2,20 +2,18 @@ import React, {Component} from 'react'
 import Grid from '@material-ui/core/Grid';
 import PlayingCard from './playingCard'
 
-import img01 from '../images/Boar.jpeg'
-import img02 from '../images/Cat.jpeg'
-import img03 from '../images/Cow.jpeg'
-import img04 from '../images/Deer.jpeg'
-import img05 from '../images/Ducks.jpeg'
-import img06 from '../images/Goose.jpeg'
-import img07 from '../images/Horse.jpg'
-import img08 from '../images/Piglet.jpeg'
-import img09 from '../images/Puppy.jpg'
-import img10 from '../images/Rooster.png'
-import img11 from '../images/Moose.webp'
-import img12 from '../images/Wolf.jpg'
-
-
+import img01 from '../assets/Boar.jpeg'
+import img02 from '../assets/Cat.jpeg'
+import img03 from '../assets/Cow.jpeg'
+import img04 from '../assets/Deer.jpeg'
+import img05 from '../assets/Ducks.jpeg'
+import img06 from '../assets/Goose.jpeg'
+import img07 from '../assets/Horse.jpg'
+import img08 from '../assets/Piglet.jpeg'
+import img09 from '../assets/Puppy.jpg'
+import img10 from '../assets/Rooster.png'
+import img11 from '../assets/Moose.webp'
+import img12 from '../assets/Wolf.jpg'
 
 const imgFts = [
   {index: '01', name:'Boar', image: img01},
@@ -44,24 +42,17 @@ const imgFts = [
   {index: '24', name:'Wolf', image: img12}
 ]
 
-
-
-
-
-
 class Cards extends Component {
 
+  // state = {
+  //   numberClicked: 0
+  // }
   
-  shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-            
-        let temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-        
-    }
-  }
+  // onClickHandler = () => {
+  //   this.setState ({
+  //     numberClicked: this.state.numberClicked + 1
+  //   }) 
+  // }
 
 
 
@@ -70,13 +61,23 @@ class Cards extends Component {
 
   render() {
     return(
+      <div style={{marginTop: '100px'}}>
+
       <Grid container>
          <Grid item container direct='row' justify='space-evenly'>  
           {imgFts.map((img) => (
-            <PlayingCard key={img.index} front={img.image} name={img.name} index={img.index} />
+            <PlayingCard 
+              // onClick={this.onClickHandler}
+              key={img.index} 
+              front={img.image} 
+              name={img.name} 
+              index={img.index}
+              // numberClicked={this.state.numberClicked} 
+            />
           ))}
         </Grid>
       </Grid>
+      </div>
   
     )
   }

@@ -11,17 +11,22 @@ class PlayingCard extends Component {
 
   onClickHandler = () => {
     this.setState ({
-      flipped: 1
+      flipped: !this.state.flipped
     }) 
-    }
+  }
   
-    something () {
-      if (this.props.name === this.props.name ){
-        // leave flipped add 1 point
-      } else {
-          // flipped: 0
-      }
-    }
+
+
+  
+
+
+    // something () {
+    //   if (this.props.name === this.props.name ){
+    //     // leave flipped add 1 point
+    //   } else {
+    //       // flipped: 0
+    //   }
+    // }
   
 
   render() {
@@ -31,17 +36,17 @@ class PlayingCard extends Component {
         onClick={this.onClickHandler}
       >
         {this.state.flipped ? 
-
-        
-        
-        <CardFront className='cardFront'
-          image={this.props.front}
-          name={this.props.name}
-          index={this.props.index}
-        />:
-        <CardBack className='cardBack'
-          image={this.props.image}  
-        />}
+          <CardFront className='cardFront'
+            image={this.props.front}
+            name={this.props.name}
+            index={this.props.index}
+            // number={this.props.numberClicked}
+          />
+          :
+          <CardBack className='cardBack'
+            image={this.props.image}  
+          />
+        }
       </div>
     )
   }

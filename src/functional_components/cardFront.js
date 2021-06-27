@@ -2,32 +2,27 @@ import React from 'react'
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 import Grid from '@material-ui/core/Grid';
 
 
 
 
 const CardFront = (props) => {
-  const theme = useTheme();
 
- 
-
-
-
-  
 
   
    return (
     
      <Grid item>
-     {console.log(props)}
-      
+     {/* {console.log(props.number)} */}
+  
+     
       <Card >
         <CardActionArea>
           <img
             style={{ maxHeight: '150px',  minHeight: '30px', padding: '10px' }}
+            alt={props.name}
             src={props.image}
           />
         </CardActionArea>

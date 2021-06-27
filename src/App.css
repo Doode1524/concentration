@@ -1,8 +1,21 @@
-/* .App {
+.App {
+  height: 100vh;
+}
+
+
+.banner {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: lightskyblue;
+}
+
+.playingCard {
   
-} */
-
-
+  top: 350px;
+}
 
 
 
