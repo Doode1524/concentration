@@ -1,15 +1,23 @@
 
 import React from 'react' 
 
-const AllGames = () => {
+const GamesList = () => {
+
+  let fetchGames = () => {
+    fetch('http://127.0.0.1:3001/games')
+      .then(r => r.json)
+      .then(json => console.log(json))
+  }
+
+
   return(
-    <div >
-      List of all played games.
-    </div>
+    <>
+      {fetchGames()}
+    </>
   )
 }
 
-export default AllGames;
+export default GamesList;
 
 
 

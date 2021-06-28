@@ -20,7 +20,7 @@ const CardBack = () => {
       <Card>
         <CardActionArea>
           <img
-            alt='BackGround Image'
+            alt='BackGround'
             style={{ height: "150px", padding: '20px' }}
             src={bgImg}
           />

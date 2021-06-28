@@ -61,7 +61,7 @@ class Cards extends Component {
 
   render() {
     return(
-      <div style={{marginTop: '100px'}}>
+      <div style={{marginTop: '200px'}}>
 
       <Grid container>
          <Grid item container direct='row' justify='space-evenly'>  
