@@ -1,7 +1,7 @@
-import React, { useEffect, useState }  from 'react' 
+import React from 'react' 
 import NavBar from './nav';
 import Home from './home';
-import GamesList from './games';
+import GamesList from '../class_components/gamesList';
 import NewGame from '../class_components/newGame';
 import {
   BrowserRouter as Router,
@@ -9,8 +9,6 @@ import {
 } from 'react-router-dom';
 
 const Banner = () => {
-
-  const [games, setGames] = useState([])
 
   return(
     <div className='banner'>
@@ -23,7 +21,7 @@ const Banner = () => {
 
         <Route path="/newGame" component={NewGame} />
 
-        <Route path="/games" render={() => <GamesList games={games} />} />
+        <Route path="/games" render={() => <GamesList />} />
 
         {/* <Route exact path="/games/:id" render={routerProps => <GameView games={games} {...routerProps} />} /> */}
 
