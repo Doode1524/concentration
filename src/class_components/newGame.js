@@ -1,15 +1,21 @@
 import React, { Component } from 'react' 
 
+import NewGameForm from '../functional_components/newGameForm';
+import NewGameSubmit from '../functional_components/newGameSubmit';
+
+import { connect } from 'react-redux';
+import { makeAGame } from '../actions/makeAGame'
+
 class NewGame extends Component {
 
-  state = {
-    initials: "",
-    numPics: "8"
+
+  componentDidMount(){
+    this.props.makeAGame()
   }
 
-  handleChange = (e) => {
+   handleChange = (e) => {
    
-    this.setState({
+    this.props.games({
       [e.target.name]: e.target.value
       
     })
@@ -24,14 +30,16 @@ class NewGame extends Component {
   render (){
     return(
       <div>
-        <h2>Play a New Game</h2>
+        <NewGameForm />
+        <NewGameSubmit />
+        {/* <h2>Play a New Game</h2>
         <form className="newGame" onSubmit={this.handleSubmit}>
           <label>Initials</label>
           <input 
             type='text'
             name='initials'
             placeholder='TTT'
-            value={this.state.initials} 
+            value={this.props.initials} 
             onChange={this.handleChange}
           ></input>
           <br></br>
@@ -39,7 +47,7 @@ class NewGame extends Component {
           <label>Number of Pictures (*2 for total cards)</label>
           <select 
             name='numPics' 
-            value={this.state.numPics} 
+            value={this.props.numPics} 
             onChange={this.handleChange}
           >       
             <option value="8">4</option>
@@ -53,17 +61,19 @@ class NewGame extends Component {
             <option value="24">12</option>
           </select>
           <br></br>
-          <br></br>
-          <input 
-            style={{backgroundColor: 'dkblue', color: 'white'}}
+          <br></br> */}
+          {/* <input 
+            style={{backgroundColor: 'darkblue', color: 'white'}}
             type="submit"
             value='Make a New Game'
           ></input>
           <br></br>
-        </form>
+        </form> */}
       </div>
     )
   }
 }
 
-export default NewGame;
+export default connect((state) => {
+  return {games: state.games}
+}, {makeAGame})(NewGame);
