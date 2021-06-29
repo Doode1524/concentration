@@ -1,40 +1,29 @@
 import React, { Component } from 'react' 
-
-import NewGameForm from '../functional_components/newGameForm';
-import NewGameSubmit from '../functional_components/newGameSubmit';
-
 import { connect } from 'react-redux';
-import { makeAGame } from '../actions/makeAGame'
+import { MakeAGame } from '../redux/actions/makeAGame';
 
 class NewGame extends Component {
-
-
   componentDidMount(){
-    this.props.makeAGame()
+    this.props.MakeAGame()
   }
 
    handleChange = (e) => {
-   
-    this.props.games({
-      [e.target.name]: e.target.value
-      
+    this.props.game({
+      [e.target.name]: e.target.value 
     })
-
   }
 
   handleSubmit(e){
     e.preventDefault();
-
+    e.props.onSubmit()
   }
 
   render (){
     return(
       <div>
-        <NewGameForm />
-        <NewGameSubmit />
-        {/* <h2>Play a New Game</h2>
+        <h2>Play a New Game</h2>
         <form className="newGame" onSubmit={this.handleSubmit}>
-          <label>Initials</label>
+          <label>Initials  </label>
           <input 
             type='text'
             name='initials'
@@ -44,7 +33,8 @@ class NewGame extends Component {
           ></input>
           <br></br>
           <br></br>
-          <label>Number of Pictures (*2 for total cards)</label>
+          <label>Number of Pictures (*2 for total cards)   </label>
+          
           <select 
             name='numPics' 
             value={this.props.numPics} 
@@ -61,19 +51,18 @@ class NewGame extends Component {
             <option value="24">12</option>
           </select>
           <br></br>
-          <br></br> */}
-          {/* <input 
+          <br></br>
+          <input 
             style={{backgroundColor: 'darkblue', color: 'white'}}
             type="submit"
             value='Make a New Game'
           ></input>
           <br></br>
-        </form> */}
+        </form>
       </div>
     )
   }
 }
-
 export default connect((state) => {
-  return {games: state.games}
-}, {makeAGame})(NewGame);
+  return {game: state.game}
+}, {MakeAGame})(NewGame);

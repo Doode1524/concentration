@@ -1,12 +1,12 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setGames } from '../actions/setGames'
+import { SetGames } from '../redux/actions/setGames'
 
 class GamesList extends Component {
 
   componentDidMount(){
-    this.props.setGames()
+    this.props.SetGames()
   }
   
   render() {
@@ -24,4 +24,4 @@ class GamesList extends Component {
 
 export default connect((state) => {
   return {games: state.games}
-}, {setGames})(GamesList)
+}, {SetGames})(GamesList)
