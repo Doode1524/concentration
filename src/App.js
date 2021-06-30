@@ -23,7 +23,7 @@ function App() {
 
       </div>
       <Banner />
-      <Cards />
+      
   
     </div>
   
