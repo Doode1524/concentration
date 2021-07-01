@@ -1,27 +1,22 @@
-
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { SetGames } from '../redux/actions/setGames'
 
-class GamesList extends Component {
 
-  componentDidMount(){
-    this.props.SetGames()
-  }
-  
-  render() {
-//render games data based on redux state
+const GamesList = (props) => {
 
-    return (
-      <div>
-        {this.props.games.map((g) => {
-          return <p key={g.id}>{g.initials} {g.score} of {`${g.numCards}`/2} points</p>
-        })}
-      </div>
-    )
-  }
+  return (
+    <>
+    
+      {props.games.map((g) => {
+        return <p key={g.id}>{g.initials} {g.score} of {`${g.numCards}`/2} points</p>
+      })}
+    </>
+  )
 }
+
+
+
 
 export default connect((state) => {
   return {games: state.games}
-}, {SetGames})(GamesList)
+}) (GamesList); 
