@@ -1,6 +1,5 @@
 import './App.css';
 import Banner from './functional_components/banner';
-import Cards from './class_components/cards';
 import { useState } from 'react'
 
 function App() {
@@ -12,14 +11,14 @@ function App() {
   }
 
   return (
-   
     <div className="App" style={ darkMode ? { backgroundColor: 'black', color: 'cornsilk'} : { backgroundColor: 'bisque', color: 'dkblue'} }>
 
       <div>
         <button onClick={clickHandler} style={{backgroundColor: 'black', color: 'cornsilk'}}>Dark Mode</button>
-
       </div>
+
       <Banner />
+      
     </div>
   
   );
