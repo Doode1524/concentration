@@ -6,7 +6,7 @@ export default function NavBar() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/games">Games List</Link>
-      <Link to="/newGame">New Game</Link>
+      <Link to="/games/new">New Game</Link>
     </nav>
   )
 
