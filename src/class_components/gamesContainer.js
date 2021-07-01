@@ -6,7 +6,7 @@ import Games from './gamesList'
 import NewGame from './newGame'
 
 import {
-  BrowserRouter as Route, Switch
+  Route, Switch
 } from 'react-router-dom';
 
 class GamesContainer extends Component {
@@ -20,17 +20,18 @@ class GamesContainer extends Component {
     return (
       <>
         <Switch>
-        
           <Route exact path="/games">
             <Games games={this.props.games}/>
           </Route> 
+          <Route exact path="/games/new">
+            <NewGame />
+          </Route>          
           <Route exact path="/games/:id" component={(routeData) => {
               console.log(routeData)
               return <Cards />
             }
           } />
         </Switch>
-        <NewGame />
       </>
     )
   }
