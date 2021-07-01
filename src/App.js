@@ -1,10 +1,7 @@
-
 import './App.css';
 import Banner from './functional_components/banner';
 import Cards from './class_components/cards';
 import { useState } from 'react'
-
-
 
 function App() {
 
@@ -23,12 +20,9 @@ function App() {
 
       </div>
       <Banner />
-      
-  
     </div>
   
   );
 }
-  
 
 export default App;

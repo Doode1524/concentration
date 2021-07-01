@@ -14,20 +14,6 @@ class PlayingCard extends Component {
       flipped: !this.state.flipped
     }) 
   }
-  
-
-
-  
-
-
-    // something () {
-    //   if (this.props.name === this.props.name ){
-    //     // leave flipped add 1 point
-    //   } else {
-    //       // flipped: 0
-    //   }
-    // }
-  
 
   render() {
     return(
@@ -40,7 +26,6 @@ class PlayingCard extends Component {
             image={this.props.front}
             name={this.props.name}
             index={this.props.index}
-            // number={this.props.numberClicked}
           />
           :
           <CardBack className='cardBack'

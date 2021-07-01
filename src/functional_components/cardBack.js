@@ -4,15 +4,9 @@ import bgImg from '../assets/cardBack.png'
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-
 import Grid from '@material-ui/core/Grid';
-
-
-
  
 const CardBack = () => {
-
-  
 
   return (
   
@@ -28,12 +22,8 @@ const CardBack = () => {
       </Card>
     </Grid>
 
-  
   )
-
-
 }
-
 
 export default CardBack;
 

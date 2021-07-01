@@ -34,7 +34,6 @@ class GamesContainer extends Component {
       </>
     )
   }
-
 }
 
 // const mapStateToProps = (state) => {

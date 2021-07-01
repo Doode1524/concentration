@@ -44,21 +44,6 @@ const imgFts = [
 
 class Cards extends Component {
 
-  // state = {
-  //   numberClicked: 0
-  // }
-  
-  // onClickHandler = () => {
-  //   this.setState ({
-  //     numberClicked: this.state.numberClicked + 1
-  //   }) 
-  // }
-
-
-
-
-
-
   render() {
     return(
       <div style={{marginTop: '200px'}}>
@@ -67,12 +52,10 @@ class Cards extends Component {
          <Grid item container direct='row' justify='space-evenly'>  
           {imgFts.map((img) => (
             <PlayingCard 
-              // onClick={this.onClickHandler}
               key={img.index} 
               front={img.image} 
               name={img.name} 
               index={img.index}
-              // numberClicked={this.state.numberClicked} 
             />
           ))}
         </Grid>
