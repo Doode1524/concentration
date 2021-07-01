@@ -1,21 +1,22 @@
 import React, { Component } from 'react' 
 import { connect } from 'react-redux';
-import { MakeAGame } from '../redux/actions/makeAGame';
+import { makeAGame } from '../redux/actions/makeAGame';
 
 class NewGame extends Component {
-  componentDidMount(){
-    this.props.MakeAGame()
+  state = {
+    initials: "",
+    numPics: "8"
   }
 
    handleChange = (e) => {
-    this.props.game({
+    this.setState({
       [e.target.name]: e.target.value 
     })
   }
 
   handleSubmit(e){
     e.preventDefault();
-    e.props.onSubmit()
+    this.props.makeAGame()
   }
 
   render (){
@@ -28,7 +29,7 @@ class NewGame extends Component {
             type='text'
             name='initials'
             placeholder='TTT'
-            value={this.props.initials} 
+            value={this.state.initials} 
             onChange={this.handleChange}
           ></input>
           <br></br>
@@ -37,7 +38,7 @@ class NewGame extends Component {
           
           <select 
             name='numPics' 
-            value={this.props.numPics} 
+            value={this.state.numPics} 
             onChange={this.handleChange}
           >       
             <option value="8">4</option>
@@ -65,4 +66,4 @@ class NewGame extends Component {
 }
 export default connect((state) => {
   return {game: state.game}
-}, {MakeAGame})(NewGame);
+}, {makeAGame})(NewGame);
