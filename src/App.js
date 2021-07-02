@@ -30,9 +30,9 @@ function App() {
   return (
     <div className={classes.App} style={ darkMode ? { backgroundColor: 'black', color: 'cornsilk'} : { backgroundColor: 'bisque', color: 'dkblue'} }>
 
-      <div>
+      {/* <div>
         <button onClick={clickHandler} style={{backgroundColor: 'black', color: 'cornsilk'}}>Dark Mode</button>
-      </div>
+      </div> */}
 
       <Banner />
       
