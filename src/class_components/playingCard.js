@@ -5,14 +5,12 @@ import CardBack from '../functional_components/cardBack';
 
 class PlayingCard extends Component {
 
-  state = {
-    flipped: 0
-  }
+  
 
   onClickHandler = () => {
-    this.setState ({
-      flipped: !this.state.flipped
-    }) 
+    
+    this.props.flipCard(this.props.id)
+     
   }
 
   render() {
@@ -21,11 +19,12 @@ class PlayingCard extends Component {
         className='playingCard'
         onClick={this.onClickHandler}
       >
-        {this.state.flipped ? 
+        {this.props.flipped ? 
           <CardFront className='cardFront'
-            image={this.props.front}
+            image={this.props.image}
             name={this.props.name}
-            index={this.props.index}
+            id={this.props.id}
+            flipped={this.props.flipped}
           />
           :
           <CardBack className='cardBack'
