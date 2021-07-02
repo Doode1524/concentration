@@ -2,55 +2,80 @@ import React, {Component} from 'react'
 import Grid from '@material-ui/core/Grid';
 import PlayingCard from './playingCard'
 
-import img01 from '../assets/Boar.jpeg'
-import img02 from '../assets/Cat.jpeg'
-import img03 from '../assets/Cow.jpeg'
-import img04 from '../assets/Deer.jpeg'
-import img05 from '../assets/Ducks.jpeg'
-import img06 from '../assets/Goose.jpeg'
-import img07 from '../assets/Horse.jpg'
-import img08 from '../assets/Piglet.jpeg'
-import img09 from '../assets/Puppy.jpg'
-import img10 from '../assets/Rooster.png'
-import img11 from '../assets/Moose.webp'
-import img12 from '../assets/Wolf.jpg'
-
+import img1 from '../assets/Boar.jpeg'
+import img2 from '../assets/Cat.jpeg'
+import img3 from '../assets/Cow.jpeg'
+import img4 from '../assets/Deer.jpeg'
+import img5 from '../assets/Ducks.jpeg'
+import img6 from '../assets/Goose.jpeg'
+import img7 from '../assets/Piglet.jpeg'
+import img8 from '../assets/Puppy.jpg'
+import img9 from '../assets/Rooster.png'
 
 class Cards extends Component {
   
   state = {
     click: 0,
-    imgFts: [
-      {index: '01', name:'Boar', image: img01, flipped: false},
-      {index: '02', name:'Boar', image: img01, flipped: false},
-      {index: '03', name:'Cat', image: img02, flipped: false},
-      {index: '04', name:'Cat', image: img02, flipped: false},
-      {index: '05', name:'Cow', image: img03, flipped: false},
-      {index: '06', name:'Cow', image: img03, flipped: false},
-      {index: '07', name:'Deer', image: img04, flipped: false},
-      {index: '08', name:'Deer', image: img04, flipped: false},
-      {index: '09', name:'Ducks', image: img05, flipped: false},
-      {index: '10', name:'Ducks', image: img05, flipped: false},
-      {index: '11', name:'Goose', image: img06, flipped: false},
-      {index: '12', name:'Goose', image: img06, flipped: false},
-      {index: '13', name:'Horse', image: img07, flipped: false},
-      {index: '14', name:'Horse', image: img07, flipped: false},
-      {index: '15', name:'Moose', image: img11, flipped: false},
-      {index: '16', name:'Moose', image: img11, flipped: false},
-      {index: '17', name:'Piglet', image: img08, flipped: false},
-      {index: '18', name:'Piglet', image: img08, flipped: false},
-      {index: '19', name:'Puppy', image: img09, flipped: false},
-      {index: '20', name:'Puppy', image: img09, flipped: false},
-      {index: '21', name:'Rooster', image: img10, flipped: false},
-      {index: '22', name:'Rooster', image: img10, flipped: false},
-      {index: '23', name:'Wolf', image: img12, flipped: false},
-      {index: '24', name:'Wolf', image: img12, flipped: false}
+    imgFrts: [
+      {id: 1, name:'Boar', image: img1, flipped: false, match: false},
+      {id: 2, name:'Boar', image: img1, flipped: false, match: false},
+      {id: 3, name:'Cat', image: img2, flipped: false, match: false},
+      {id: 4, name:'Cat', image: img2, flipped: false, match: false},
+      {id: 5, name:'Cow', image: img3, flipped: false, match: false},
+      {id: 6, name:'Cow', image: img3, flipped: false, match: false},
+      {id: 7, name:'Deer', image: img4, flipped: false, match: false},
+      {id: 8, name:'Deer', image: img4, flipped: false, match: false},
+      {id: 9, name:'Ducks', image: img5, flipped: false, match: false},
+      {id: 10, name:'Ducks', image: img5, flipped: false, match: false},
+      {id: 11, name:'Goose', image: img6, flipped: false, match: false},
+      {id: 12, name:'Goose', image: img6, flipped: false, match: false},
+      {id: 13, name:'Piglet', image: img7, flipped: false, match: false},
+      {id: 14, name:'Piglet', image: img7, flipped: false, match: false},
+      {id: 15, name:'Puppy', image: img8, flipped: false, match: false},
+      {id: 16, name:'Puppy', image: img8, flipped: false, match: false},
+      {id: 17, name:'Rooster', image: img9, flipped: false, match: false},
+      {id: 18, name:'Rooster', image: img9, flipped: false, match: false}
     ]
   }
 
-  // someMethod = () => {
-  //   this.setState
-  // }
+  clickCounter = () => {
+    this.setState({
+        click: this.state.click + 1
+    },
+    () => {
+      if (this.state.click === 2) {
+        this.setState({
+          imgFrts: imgFrts
+        })
+      }
+    })
+  }
+
+  flipCard = (id) => {
+   let images = this.state.imgFrts.map((img) => {
+      if(img.id === id) {
+        img.flipped = true
+        return img
+      } else {
+        return img
+      }
+    })
+    this.setState({
+      imgFrts: images
+    })
+  }
+
+  matchAny = () => {
+    // this.state.imgFrts.filter((img) => {
+    //     filter by the two objects that flipped is true
+    //     
+    //     
+    //   return t o f
+    //  })
+    //      if name = name
+    //      
+    //  if true setState match
+  }
 
 
   // shuffle() {
@@ -72,12 +97,13 @@ class Cards extends Component {
 
       <Grid container>
          <Grid item container direct='row' justify='space-evenly'>  
-          {this.state.imgFts.map((img) => (
+          {this.state.imgFrts.map((img) => (
             <PlayingCard 
+              flipCard={this.flipCard}
               key={img.index} 
-              front={img.image} 
+              image={img.image} 
               name={img.name} 
-              index={img.index}
+              id={img.id}
               flipped={img.flipped}
             />
           ))}
