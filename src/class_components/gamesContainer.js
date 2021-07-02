@@ -16,19 +16,19 @@ class GamesContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <>
         <Switch>
           <Route exact path="/games">
             <Games games={this.props.games}/>
           </Route> 
-          <Route exact path="/games/new">
+          <Route path="/games/new" >
             <NewGame />
           </Route>          
           <Route exact path="/games/:id" component={(routeData) => {
-              console.log(routeData)
-              return <Cards />
+              const id = parseInt(routeData.match.params.id)
+              const game = this.props.games.find(g => g.id === id)
+              return <Cards game={game} />
             }
           } />
         </Switch>
