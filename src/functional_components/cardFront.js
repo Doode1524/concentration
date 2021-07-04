@@ -12,7 +12,7 @@ const CardFront = (props) => {
       <Card >
         <CardActionArea>
           <img
-            style={{ maxHeight: '150px',  minHeight: '30px', padding: '10px' }}
+            style={{ maxHeight: '150px',  minHeight: '30px', padding: '20px' }}
             alt={props.name}
             src={props.image}
           />
