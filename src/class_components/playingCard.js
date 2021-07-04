@@ -9,6 +9,7 @@ class PlayingCard extends Component {
 
   onClickHandler = () => {
     this.props.flipCard(this.props.id)
+    this.props.clickCounter()
     this.props.matchAny(this.props.name)
   }
 

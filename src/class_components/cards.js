@@ -69,22 +69,25 @@ class Cards extends Component {
    let flpdImgs = this.state.imgFrts.filter((img) => {
       switch(img.flipped === true) {
         case true:
-          console.log(img)
-          switch(img.name === name && img.name === img.name) {
-            case true:
-              console.log(img)
-            case false:
-              console.log(img)
-          }
-          
+          return img
         default:
           this.setState({
             imgFrts: this.state.imgFrts
           })
       }
     })
-      
-       
+
+    let matchImgs = flpdImgs.map((img) => {
+      console.log(this.state.click)
+      // switch(img.name === name && img.id ) {
+      //   case true:
+      //     return img
+      //   default:
+      //     this.setState({
+      //       imgFrts: this.state.imgFrts
+      //     })
+      // }
+    })   
       
    
     //      if name = name
@@ -114,6 +117,7 @@ class Cards extends Component {
          <Grid item container direct='row' justify='space-evenly'>  
           {this.state.imgFrts.map((img) => (
             <PlayingCard 
+              clickCounter={this.clickCounter}
               matchAny={this.matchAny}
               flipCard={this.flipCard}
               key={img.index} 
