@@ -8,9 +8,8 @@ class PlayingCard extends Component {
   
 
   onClickHandler = () => {
-    
     this.props.flipCard(this.props.id)
-     
+    this.props.matchAny(this.props.name)
   }
 
   render() {
