@@ -1,11 +1,8 @@
-
 import React, {Component} from 'react' 
 import CardFront from '../functional_components/cardFront';
 import CardBack from '../functional_components/cardBack';
 
 class PlayingCard extends Component {
-
-  
 
   onClickHandler = () => {
     this.props.flipCard(this.props.id)
