@@ -8,7 +8,6 @@ import {
   Route, Switch
 } from 'react-router-dom';
 
-
 class GamesContainer extends Component {
 
   componentDidMount(){
@@ -30,10 +29,6 @@ class GamesContainer extends Component {
     )
   }
 }
-
-// const mapStateToProps = (state) => {
-//   game = state.game
-// }
 
 export default connect((state) => {
   return {games: state.games}

@@ -10,7 +10,7 @@ const makeAGame = (gameData) => {
     }).then(r => r.json())
       .then(game => {
         dispatch({type: "NEW_GAME", payload: game})
-      })
+    })
   }
 }
 

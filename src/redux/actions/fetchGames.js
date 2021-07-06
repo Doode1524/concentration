@@ -4,8 +4,8 @@ const fetchGames = () => {
   .then(r => r.json())
   .then(games => {
     dispatch({type: "SET_GAMES", payload: games})
-  })
-}
+    })
+  }
 }
 
 export {fetchGames}

@@ -18,7 +18,6 @@ class NewGame extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // debugger
     this.props.makeAGame(this.state)
   }
 
