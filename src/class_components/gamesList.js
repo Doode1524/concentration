@@ -8,6 +8,7 @@ const GamesList = (props) => {
     <>
       <ListOfGames />
       {props.games.map((g) => {
+        console.log(g)
         return <p key={g.id}>{g.initials} {g.score} of {`${g.numCards}`/2} points</p>
       })}
     </>
