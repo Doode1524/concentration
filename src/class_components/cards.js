@@ -120,7 +120,7 @@ class Cards extends Component {
               clickCounter={this.clickCounter}
               matchAny={this.matchAny}
               flipCard={this.flipCard}
-              key={img.index} 
+              key={img.id} 
               image={img.image} 
               name={img.name} 
               id={img.id}
