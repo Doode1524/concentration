@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchGames } from '../redux/actions/fetchGames'
-import Games from './gamesList'
+import Games from '../functional_components/gamesList'
 import NewGame from './newGame'
 
 import {

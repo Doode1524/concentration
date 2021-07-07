@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ListOfGames from '../functional_components/listOfGames'
+import ListOfGames from './listOfGames'
 
 const GamesList = (props) => {
 
