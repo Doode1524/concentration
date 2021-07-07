@@ -5,11 +5,11 @@ Flatiron Portfolio Project -- Module 4: React and Redux with Rails API<br><br>
 
 **Install Instructions**
 <br><br>
-Make a folder on your system, fork and clone this repo and https://github.com/kak79/concentration_backend into two sub folders or directories so they are in the same folder or directory.<br>
+Make a folder on your system, fork and clone this repo and https://github.com/kak79/concentration-backend into two sub folders or directories so they are in the same folder or directory.<br>
 Navigate to the 'concentration' folder in the terminal and run: <br>
 npm install<br>
 
-Navigate to the 'concentration_backend' folder in the terminal and run the following:<br>
+Navigate to the 'concentration-backend' folder in the terminal and run the following:<br>
 
 bundle install<br>
 rails db:migrate<br>
@@ -17,7 +17,7 @@ rails db:seed<br><br>
 
 **Running the App**
 <br><br>
-In the terminal that you have open at the 'concentration_backend' folder, run <br>
+In the terminal that you have open at the 'concentration-backend' folder, run <br>
 rails s -p 3001<br>
 in your terminal to access and use the Rails API.<br>
 Find the 'concentration' folder and run <br>
