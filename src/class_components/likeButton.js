@@ -8,7 +8,6 @@ export default class likeButton extends Component {
   }
 
   onClickHandler = () => {
-    // console.log("here")
     this.setState({
       like: this.state.like + 1
     }) 

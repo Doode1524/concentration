@@ -1,5 +1,4 @@
 const makeAGame = (gameData) => {
-  // debugger
   return (dispatch) => {
     fetch('http://127.0.0.1:3001/games',{
       headers: {
