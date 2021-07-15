@@ -18,12 +18,10 @@ class GamesContainer extends Component {
     return (
       <>
         <Switch>
+          <Route path="/games/new" render={(routerProps) => <NewGame sendData={this.componentDidMount} {...routerProps} />} />         
           <Route exact path="/games">
             <GamesList games={this.props.games}/>
           </Route> 
-          <Route exact path="/games/new">
-            <NewGame />
-          </Route>          
         </Switch>
       </>
     )

@@ -19,6 +19,7 @@ class NewGame extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.makeAGame(this.state)
+    this.props.history.push("/games")
   }
 
   render (){
