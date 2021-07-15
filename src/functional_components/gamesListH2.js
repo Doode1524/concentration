@@ -1,6 +1,6 @@
 import React from 'react' 
 
-const ListOfGames = () => {
+const GamesListH2 = () => {
   return(
     <div >
       <h2><strong>Played Games List!</strong></h2>   
@@ -8,4 +8,4 @@ const ListOfGames = () => {
   )
 }
 
-export default ListOfGames;
+export default GamesListH2;

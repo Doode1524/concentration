@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ListOfGames from './listOfGames'
+import GamesListH2 from './gamesListH2'
 
 const GamesList = (props) => {
 
   return (
     <>
-      <ListOfGames />
+      <GamesListH2 />
       {props.games.map((g) => {
         return <p key={g.id}>{g.initials} {g.score} of {`${g.numCards}`/2} points</p>
       })}
