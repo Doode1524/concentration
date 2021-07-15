@@ -1,12 +1,13 @@
 import React, { Component } from 'react' 
+import NewGameH2 from '../functional_components/newGameH2';
 import { connect } from 'react-redux';
 import { makeAGame } from '../redux/actions/makeAGame';
-import Cards from './cards';
 
 class NewGame extends Component {
   state = {
     initials: "",
-    numPics: "selectValue"
+    numCards: "selectValue",
+    score: "selectValue"
   }
 
    handleChange = (e) => {
@@ -15,15 +16,15 @@ class NewGame extends Component {
     })
   }
 
-  handleSubmit(e){
+  handleSubmit = (e) => {
     e.preventDefault();
-    this.props.makeAGame()
+    this.props.makeAGame(this.state)
   }
 
   render (){
     return (
       <div>
-        <h2>Play a New Game</h2>
+        <NewGameH2 />
         <form className="newGame" onSubmit={this.handleSubmit}>
           <label>Initials  </label>
           <input 
@@ -33,12 +34,11 @@ class NewGame extends Component {
             value={this.state.initials} 
             onChange={this.handleChange}
           ></input>
-          <br></br>
-          <br></br>
+          <br></br><br></br>
           <label>Number of Matches (* 2 for total cards)   </label>
           <select 
-            name='numPics' 
-            value={this.state.numPics} 
+            name='numCards' 
+            value={this.state.numCards} 
             onChange={this.handleChange}
           > 
             <option value="selectValue">Select An Option</option>
@@ -50,9 +50,25 @@ class NewGame extends Component {
             <option value="16">8</option>
             <option value="18">9</option>
           </select>
-          <br></br>
-          <br></br>
+          <br></br><br></br>
+          <label>Score  </label>
+          <select 
+            name='score' 
+            value={this.state.score} 
+            onChange={this.handleChange}
+          > 
+            <option value="selectValue">Select An Option</option>
+            <option value="6">6</option>      
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+            <option value="18">18</option>
+          </select>
+          <br></br><br></br>
           <input 
+            disabled={ this.state.initials === "" || this.state.numCards === "selectValue" || this.state.score === "selectValue"}  
             style={{backgroundColor: 'darkblue', color: 'white'}}
             type="submit"
             value='Make a New Game'
@@ -61,7 +77,7 @@ class NewGame extends Component {
         </form>
       </div>
     )
-  }  
+  }    
 }
 
 export default connect((state) => {
