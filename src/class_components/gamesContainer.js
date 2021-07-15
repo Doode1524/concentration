@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchGames } from '../redux/actions/fetchGames'
-import Games from '../functional_components/gamesList'
+import GamesList from '../functional_components/gamesList'
 import NewGame from './newGame'
 
 import {
@@ -18,12 +18,10 @@ class GamesContainer extends Component {
     return (
       <>
         <Switch>
+          <Route path="/games/new" render={(routerProps) => <NewGame sendData={this.componentDidMount} {...routerProps} />} />         
           <Route exact path="/games">
-            <Games games={this.props.games}/>
+            <GamesList games={this.props.games}/>
           </Route> 
-          <Route exact path="/games/new">
-            <NewGame />
-          </Route>          
         </Switch>
       </>
     )
