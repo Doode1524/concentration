@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
+import Clock from '../class_components/clock'
 
 export default function NavBar() {
 
   return (
     <nav>
+      <Clock />
       <Link to="/">Home</Link>
       <Link to="/games">Games List</Link>
       <Link to="/games/new">New Game</Link>
