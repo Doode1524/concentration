@@ -44,11 +44,6 @@ class NewGame extends Component {
             <option value="selectValue">Select An Option</option>
             <option value="6">3</option>      
             <option value="8">4</option>
-            <option value="10">5</option>
-            <option value="12">6</option>
-            <option value="14">7</option>
-            <option value="16">8</option>
-            <option value="18">9</option>
           </select>
           <br></br><br></br>
           <label>Score  </label>
@@ -60,11 +55,6 @@ class NewGame extends Component {
             <option value="selectValue">Select An Option</option>
             <option value="6">6</option>      
             <option value="8">8</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="14">14</option>
-            <option value="16">16</option>
-            <option value="18">18</option>
           </select>
           <br></br><br></br>
           <input 

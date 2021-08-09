@@ -2,8 +2,11 @@ import React,{ Component } from 'react'
 
 class Clock extends Component {
 
-  state = {
-    time: new Date().toLocaleString('en-US', { timeZone: 'CST' })
+  constructor () {
+    super ()
+    this.state = {
+      time: new Date().toLocaleString('en-US', { timeZone: 'CST' })
+    }
   }
   
   componentDidMount() {

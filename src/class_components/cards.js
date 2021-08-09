@@ -1,41 +1,31 @@
 import React, {Component} from 'react' 
 import Grid from '@material-ui/core/Grid';
 import PlayingCard from './playingCard'
+import Timer from './timer';
 
-import img1 from '../assets/Boar.jpeg'
-import img2 from '../assets/Cat.jpeg'
-import img3 from '../assets/Cow.jpeg'
-import img4 from '../assets/Deer.jpeg'
-import img5 from '../assets/Ducks.jpeg'
-import img6 from '../assets/Goose.jpeg'
-import img7 from '../assets/Piglet.jpeg'
-import img8 from '../assets/Puppy.jpg'
-import img9 from '../assets/Rooster.png'
+import img1 from '../assets/Cat.jpeg'
+import img2 from '../assets/Ducks.jpeg'
+import img3 from '../assets/Piglet.jpeg'
+import img4 from '../assets/Puppy.jpg'
+
 
 class Cards extends Component {
   
-  state = {
-    click: 0,
-    imgFrts: [
-      {id: 1, name:'Boar', image: img1, flipped: false, match: false},
-      {id: 2, name:'Boar', image: img1, flipped: false, match: false},
-      {id: 3, name:'Cat', image: img2, flipped: false, match: false},
-      {id: 4, name:'Cat', image: img2, flipped: false, match: false},
-      {id: 5, name:'Cow', image: img3, flipped: false, match: false},
-      {id: 6, name:'Cow', image: img3, flipped: false, match: false},
-      {id: 7, name:'Deer', image: img4, flipped: false, match: false},
-      {id: 8, name:'Deer', image: img4, flipped: false, match: false},
-      {id: 9, name:'Ducks', image: img5, flipped: false, match: false},
-      {id: 10, name:'Ducks', image: img5, flipped: false, match: false},
-      {id: 11, name:'Goose', image: img6, flipped: false, match: false},
-      {id: 12, name:'Goose', image: img6, flipped: false, match: false},
-      {id: 13, name:'Piglet', image: img7, flipped: false, match: false},
-      {id: 14, name:'Piglet', image: img7, flipped: false, match: false},
-      {id: 15, name:'Puppy', image: img8, flipped: false, match: false},
-      {id: 16, name:'Puppy', image: img8, flipped: false, match: false},
-      {id: 17, name:'Rooster', image: img9, flipped: false, match: false},
-      {id: 18, name:'Rooster', image: img9, flipped: false, match: false}
-    ]
+  constructor (props) {
+    super (props)
+    this.state = {
+      click: 0,
+      imgFrts: [
+        {id: 1, name:'Cat', image: img1, flipped: false, match: false},
+        {id: 2, name:'Cat', image: img1, flipped: false, match: false},
+        {id: 3, name:'Ducks', image: img2, flipped: false, match: false},
+        {id: 4, name:'Ducks', image: img2, flipped: false, match: false},
+        {id: 5, name:'Piglet', image: img3, flipped: false, match: false},
+        {id: 6, name:'Piglet', image: img3, flipped: false, match: false},
+        {id: 7, name:'Puppy', image: img4, flipped: false, match: false},
+        {id: 8, name:'Puppy', image: img4, flipped: false, match: false}
+      ]
+    }
   }
 
   clickCounter = () => {
@@ -110,25 +100,24 @@ class Cards extends Component {
   render() {
     return(
       <div style={{marginTop: '30px'}}>
-
-      
-
-      <Grid container>
-         <Grid item container direct='row' justify='space-evenly'>  
+        <Timer />
+        <Grid container>   
           {this.state.imgFrts.map((img) => (
-            <PlayingCard 
-              clickCounter={this.clickCounter}
-              matchAny={this.matchAny}
-              flipCard={this.flipCard}
-              key={img.id} 
-              image={img.image} 
-              name={img.name} 
-              id={img.id}
-              flipped={img.flipped}
-            />
+            <Grid item>
+              <PlayingCard 
+                clickCounter={this.clickCounter}
+                matchAny={this.matchAny}
+                flipCard={this.flipCard}
+                key={img.id} 
+                image={img.image} 
+                name={img.name} 
+                id={img.id}
+                flipped={img.flipped}
+              />
+            </Grid>
           ))}
         </Grid>
-      </Grid>
+     
       </div>
   
     )
