@@ -53,23 +53,23 @@ class Cards extends Component {
       //   }
       // }))
  
-  checkImg = () => {
-    if (this.state.click == 2) {
-      console.log(this.state.click)
-      switch (this.state.flippedCards.forEach((image) => {
-        case (this.state.flippedCards[0].name === this.state.flippedCards[0].name):
-          return image.flipped = true;
-        case (this.state.flippedCards[0].name !== this.state.flippedCards[0].name):
-          return image.flipped = false;
-        default:
-          return image.flipped = false;  
-      }))
-    }
-  }
-
-  flipCard = (id) => {
-   let images = this.state.imgFrnts.map((img) => {
       
+  flipCard = (id) => {
+    function checkImg () {
+      if (this.state.click == 2) {
+        console.log(this.state.click)
+        for(const image of this.state.flippedCards) {
+          if (this.state.flippedCards[0].name === this.state.flippedCards[1].name) {
+            image.flipped = true
+          }
+          else {
+            image.flipped = false
+          } 
+        }
+      }
+    }
+    let images = this.state.imgFrnts.map((img) => {
+      checkImg()
       if(img.id === id) {
         img.flipped = true
         if (this.state.click < 2) {
