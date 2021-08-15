@@ -1,5 +1,5 @@
 import './App.css';
-import Banner from './functional_components/banner';
+import Banner from './components/banner';
 // import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 

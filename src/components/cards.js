@@ -29,7 +29,7 @@ class Cards extends Component {
 
   componentDidMount(){
     this.setState({
-      imgFrnts: this.shuffleCards(imgFrnts)
+      imgFrnts: this.shuffleCards(this.state.imgFrnts)
     })
   }
 
@@ -39,18 +39,33 @@ class Cards extends Component {
     })
   }
 
-  // checkImg = (img) => {
-  //   if (this.state.click === 2) {
-  //     if (this.state.flippedCards.forEach((i) => {
-  //       if (this.state.flippedCards[0].name === this.state.flippedCards[0].name) {
-  //         i.flipped = true
-  //       }
-  //       else {
-  //         i.flipped = false
-  //       }
-  //     }))
-  //   }
-  // }
+  // checkImg = () => {
+    // if (this.state.click == 2) {
+    //   console.log(this.state.click)
+  
+      // if (this.state.flippedCards.forEach((image) => {
+      //   console.log(this.state.flippedCards)
+      //   if (this.state.flippedCards[0].name === this.state.flippedCards[0].name) {
+      //     image.flipped = true
+      //   }
+      //   else {
+      //     image.flipped = false
+      //   }
+      // }))
+ 
+  checkImg = () => {
+    if (this.state.click == 2) {
+      console.log(this.state.click)
+      switch (this.state.flippedCards.forEach((image) => {
+        case (this.state.flippedCards[0].name === this.state.flippedCards[0].name):
+          return image.flipped = true;
+        case (this.state.flippedCards[0].name !== this.state.flippedCards[0].name):
+          return image.flipped = false;
+        default:
+          return image.flipped = false;  
+      }))
+    }
+  }
 
   flipCard = (id) => {
    let images = this.state.imgFrnts.map((img) => {
@@ -101,15 +116,21 @@ class Cards extends Component {
     //  if true setState match
   }
 
-
+  
   shuffleCards(array) {
+  function swap(array, i, j) {
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+   }
+
     const length = array.length;
     for (let i = length; i > 0; i--) {
        const randomIndex = Math.floor(Math.random() * i);
        const currentIndex = i - 1;
-       swap(array, currIndex, randomIndex)
+       swap(array, currentIndex, randomIndex)
+   
     }
-    console.log(array,currIndex,randomIndex)
     return array;
  }
 
