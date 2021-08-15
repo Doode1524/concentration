@@ -1,29 +1,26 @@
 import React from 'react'
-
-import bgImg from '../assets/cardBack.png'
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 
- 
-const CardBack = () => {
-
-  return (
+const CardFront = (props) => {
   
-    <Card>
+   return (
+   
+    <Card >
       <CardActionArea>
         <img
-          alt='BackGround'
-          style={{ height: "150px", padding: '20px' }}
-          src={bgImg}
+          style={{ maxHeight: '150px', padding: '20px' }}
+          alt={props.name}
+          src={props.image}
         />
       </CardActionArea>
     </Card>
    
   )
+
+
 }
 
-export default CardBack;
 
-
+export default CardFront;
 

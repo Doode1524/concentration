@@ -1,10 +1,8 @@
 import React from 'react' 
 import NavBar from './nav';
 import Home from './home';
-import GamesContainer from '../class_components/gamesContainer';
-
+import GamesContainer from './gamesContainer';
 import { makeStyles } from '@material-ui/core/styles';
-
 import {
   Route
 } from 'react-router-dom';

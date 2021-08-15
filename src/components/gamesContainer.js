@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchGames } from '../redux/actions/fetchGames'
 import Cards from './cards'
-import Games from '../functional_components/gamesList'
+import Games from './gamesList'
 import NewGame from './newGame'
-
 import {
   Route, Switch
 } from 'react-router-dom';

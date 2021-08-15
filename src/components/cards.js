@@ -2,12 +2,10 @@ import React, {Component} from 'react'
 import Grid from '@material-ui/core/Grid';
 import PlayingCard from './playingCard'
 import Timer from './timer';
-
 import img1 from '../assets/Cat.jpeg'
 import img2 from '../assets/Ducks.jpeg'
 import img3 from '../assets/Piglet.jpeg'
 import img4 from '../assets/Puppy.jpg'
-
 
 class Cards extends Component {
   
@@ -15,7 +13,7 @@ class Cards extends Component {
     super (props)
     this.state = {
       click: 0,
-      imgFrts: [
+      imgFrnts: [
         {id: 1, name:'Cat', image: img1, flipped: false, match: false},
         {id: 2, name:'Cat', image: img1, flipped: false, match: false},
         {id: 3, name:'Ducks', image: img2, flipped: false, match: false},
@@ -24,45 +22,63 @@ class Cards extends Component {
         {id: 6, name:'Piglet', image: img3, flipped: false, match: false},
         {id: 7, name:'Puppy', image: img4, flipped: false, match: false},
         {id: 8, name:'Puppy', image: img4, flipped: false, match: false}
-      ]
+      ],
+      flippedCards: []
     }
+  }
+
+  componentDidMount(){
+    this.setState({
+      imgFrnts: this.shuffleCards(imgFrnts)
+    })
   }
 
   clickCounter = () => {
     this.setState({
         click: this.state.click + 1
-    },
-    () => {
-      if (this.state.click === 2) {
-        this.setState({
-          imgFrts: this.state.imgFrts
-        })
-      }
     })
   }
 
+  // checkImg = (img) => {
+  //   if (this.state.click === 2) {
+  //     if (this.state.flippedCards.forEach((i) => {
+  //       if (this.state.flippedCards[0].name === this.state.flippedCards[0].name) {
+  //         i.flipped = true
+  //       }
+  //       else {
+  //         i.flipped = false
+  //       }
+  //     }))
+  //   }
+  // }
+
   flipCard = (id) => {
-   let images = this.state.imgFrts.map((img) => {
+   let images = this.state.imgFrnts.map((img) => {
+      
       if(img.id === id) {
         img.flipped = true
+        if (this.state.click < 2) {
+          this.state.flippedCards.push(img)
+        }
+
         return img
       } else {
         return img
       }
       })
     this.setState({
-      imgFrts: images
+      imgFrnts: images
     })
   }
 
   matchAny = (name) => {
-   let flpdImgs = this.state.imgFrts.filter((img) => {
+   let flpdImgs = this.state.imgFrnts.filter((img) => {
       switch(img.flipped === true) {
         case true:
           return img
         default:
           this.setState({
-            imgFrts: this.state.imgFrts
+            imgFrnts: this.state.imgFrnts
           })
       }
     })
@@ -74,7 +90,7 @@ class Cards extends Component {
       //     return img
       //   default:
       //     this.setState({
-      //       imgFrts: this.state.imgFrts
+      //       imgFrnts: this.state.imgFrnts
       //     })
       // }
     })   
@@ -86,25 +102,26 @@ class Cards extends Component {
   }
 
 
-  // shuffle() {
-
-  //   for (let i = array.length - 1; i > 0; i--) {
-  //       let j = Math.floor(Math.random() * (i + 1));
-            
-  //       let temp = array[i];
-  //       array[i] = array[j];
-  //       array[j] = temp;
-  //   }
-  // }
+  shuffleCards(array) {
+    const length = array.length;
+    for (let i = length; i > 0; i--) {
+       const randomIndex = Math.floor(Math.random() * i);
+       const currentIndex = i - 1;
+       swap(array, currIndex, randomIndex)
+    }
+    console.log(array,currIndex,randomIndex)
+    return array;
+ }
 
   render() {
     return(
       <div style={{marginTop: '30px'}}>
         <Timer />
-        <Grid container>   
-          {this.state.imgFrts.map((img) => (
+        <Grid container alignContent={'center'}>   
+          {this.state.imgFrnts.map((img) => (
             <Grid item>
               <PlayingCard 
+                
                 clickCounter={this.clickCounter}
                 matchAny={this.matchAny}
                 flipCard={this.flipCard}

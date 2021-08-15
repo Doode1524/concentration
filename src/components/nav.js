@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Clock from '../class_components/clock'
+import Clock from './clock'
 
 export default function NavBar() {
 

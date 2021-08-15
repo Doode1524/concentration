@@ -1,6 +1,6 @@
 import React, {Component} from 'react' 
-import CardFront from '../functional_components/cardFront';
-import CardBack from '../functional_components/cardBack';
+import CardFront from './cardFront';
+import CardBack from './cardBack';
 
 class PlayingCard extends Component {
 
